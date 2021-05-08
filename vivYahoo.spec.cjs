@@ -31,12 +31,12 @@ describe('Should complete the Viventium coding challenge', () => {
     });
     it('Should click sign in, display the boolean state of "Keep me signed in", and uncheck the box if it is checked', () => {
         yahooSignInButton.click();
-        staySignedInCheckbox.isSelected().then(() => {
-            console.log('True');
-        });
         if (staySignedInCheckbox.isSelected()) {
+            console.log("True");
             staySignedInCheckbox.click();
-        }
+        } else {
+            console.log("False");
+        };
         browser.sleep(5000); //sleep to allow time to visually inspect that the checkbox has been deselected
         //browser closes automatically using protractor, but if you need to close it manually:
         //browser.driver.close();
